@@ -97,20 +97,12 @@ button {
 /* Navbar */
 
 #navbar {
-  position: fixed;
   display: flex;
   justify-content: space-between;
-  background-color: transparent;
+  background-color: var(--color-pink);
   align-items: center;
   color: var(--color-white);
   padding: 16px;
-  width: 100%;
-  transition: all var(--animation--duration) ease-in-out;
-}
-
-#navbar.navbar--dark {
-  background-color: var(--color-pink);
-  padding: 8px;
 }
 
 .navbar__menu {
