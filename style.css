@@ -183,6 +183,10 @@ button {
   margin: 24px;
 }
 
+.home__contact:hover {
+  background-color: var(--color-orange);
+}
+
 /* Section common */
 .section {
   padding: 50px;
@@ -346,6 +350,7 @@ button {
   border: 1px solid var(--color-dark-white);
   border-radius: var(--size--border-radius);
   font-size: var(--font-regular);
+  position: relative;
 }
 
 .categories__btn.selected,
@@ -368,9 +373,9 @@ button {
   height: 24px;
   display: inline-block;
   line-height: 24px;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 5px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation--duration) ease-in;
 }
@@ -557,17 +562,30 @@ button {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
   .navbar__toggle_btn {
     display: block;
   }
   #navbar {
+    padding: 0;
     flex-direction: column;
     align-items: flex-start;
     background-color: var(--color-pink);
   }
 
-  #navbar.navbar--dark {
-    padding: 16px;
+  .navbar__toggle_btn {
+    display: block;
+    top: 23px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
 
   .navbar__menu {
@@ -581,24 +599,59 @@ button {
     display: block;
   }
 
+  .section {
+    padding: 16px;
+    padding-top: 50px;
+  }
+
   .about__major {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
   }
 
+  .categories__btn {
+    margin: 1px 0;
+    width: 100%;
+  }
+
   .project {
     flex-grow: 1;
   }
 
+  .testimonial {
+    flex-direction: column;
+  }
+
   .testimonial__avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .testimonial__avatar:nth-child(even),
+  .testimonial__avatar:nth-child(odd) {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
   }
 }
