@@ -58,7 +58,13 @@ workBtnContainer.addEventListener("click", (e) => {
   const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
   if (filter == null) {
     return;
-  }
+  }  
+
+  // Remove selection from the previous itemp and select the new one
+  const active = document.querySelector(".categories__btn.selected")
+  active.classList.remove("selected");
+  const target =  e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode;
+  target.classList.add("selected");
 
   projectContainer.classList.add("anim-out");
   setTimeout(() => {
